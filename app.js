@@ -2,7 +2,7 @@ const express = require('express')
 const dotEnv = require('dotenv').config()
 const {adminRoute,frontendRoute} = require('./routes')
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 1293
 const app =express()
 
 
