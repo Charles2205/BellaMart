@@ -1,5 +1,5 @@
 const index =(req,res)=>{
-res.send('working')
+res.send('<h1>THIS IS THE ADMIN SIDE</h1>')
 }
 
 
