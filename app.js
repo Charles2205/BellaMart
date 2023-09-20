@@ -8,12 +8,13 @@ const app =express()
 
 
 app.use(express.static(__dirname+'/public'))
-app.set('view','ejs')
+app.set('view engine','ejs')
 
+
+// app.use('/',frontendRoute )
+app.use(expressEjsLayouts)
+app.set('layout','pages/admin/layouts/master')
 app.use('/admin',adminRoute)
-app.use('/',frontendRoute )
-
-
 
 
 const startServer=async()=>{

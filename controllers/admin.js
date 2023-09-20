@@ -1,5 +1,5 @@
 const index =(req,res)=>{
-res.send('<h1>THIS IS THE ADMIN SIDE</h1>')
+res.render('pages/admin/pages/index')
 }
 
 
