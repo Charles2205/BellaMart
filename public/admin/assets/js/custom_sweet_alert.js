@@ -9,29 +9,13 @@ btnSave.addEventListener ("click",async(e)=>{
             showToast("error","field required")
             return false
         }
-        return true 
+        return console.log('Working') 
     })
-    if(result.length>2){
-        // const userName = document.querySelector("#user_name").value
-        // const password = document.querySelector("#password").value
     
-        // const res = await axios.get("/") .then(response => {
-        //     // showToast('success','Login Success')
-        //   // Assuming a successful response from the server
-        //   window.location.href = '/'; // Redirect to the desired page
-        // })
-        // .catch(error => {
-        //   console.error('Error:', error);
-        // });
-        // console.log(res);
-        alert('Hello')
-    }
-    
-    // console.log(result); 
-
+   
     
 
-    })
+  })
 
 
 
