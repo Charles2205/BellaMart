@@ -3,6 +3,6 @@ const express = require('express')
 const app =express.Router()
 
 app.get('/', adminController.viewLogin)
-app.get('/',adminController.index)
+app.get('/home',adminController.index)
 
 module.exports=app
