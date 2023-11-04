@@ -3,8 +3,8 @@ const dotEnv = require('dotenv').config()
 const {adminRoute,frontendRoute} = require('./routes')
 const expressEjsLayouts = require('express-ejs-layouts')
 
-const PORT = process.env.PORT || 7801
-const app =express()
+const PORT = process.env.PORT || 1288
+const app = express()
 
 
 app.use(express.static(__dirname+'/public'))
