@@ -9,12 +9,21 @@ btnSave.addEventListener ("click",async(e)=>{
             showToast("error","field required")
             return false
         }
-        return console.log('Working') 
+        // return true
     })
-    
-   
-    
+    // console.log(result);
+      // if(result.length<2){
+      //   const username = document.querySelector('#user_name').value
+      //   console.log(username);
 
+      // }
+      // console.log(result.value);
+      if(result.value>2){
+        const username = document.querySelector('#user_name').value
+        console.log('working');
+      }else{
+        console.log('not working')
+      }
   })
 
 
