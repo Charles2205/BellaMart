@@ -5,25 +5,27 @@ btnSave.addEventListener ("click",async(e)=>{
     let allInputs = document.querySelectorAll(".inputValidator")
     allInputs = Array.from(allInputs)
     const result = allInputs.filter((input)=>{
+
         if(input.value.length<1){
             showToast("error","field required")
-            return false
+            // return false
         }
-        // return true
-    })
-    // console.log(result);
-      // if(result.length<2){
-      //   const username = document.querySelector('#user_name').value
-      //   console.log(username);
 
-      // }
-      // console.log(result.value);
-      if(result.value>2){
-        const username = document.querySelector('#user_name').value
-        console.log('working');
-      }else{
-        console.log('not working')
-      }
+    })
+
+    const usernameInput = document.querySelector('#user_name');
+    const passwordInput = document.querySelector('#password');
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    if (username.trim() === "demo" && password.trim() === "123") {
+        console.log("Login successful");
+        window.location.href='/admin/dashboard'
+        // Add code here to navigate or perform actions after successful login
+    } else {
+        showToast("error", "Access denied. Please check your username and password.");
+    }
   })
 
 
