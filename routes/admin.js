@@ -4,6 +4,6 @@ const app =express.Router()
 
 app.get('/', adminController.viewLogin)
 app.get('/dashboard',adminController.index)
-app.get('/dashboard/auth',adminController.viewAuth)
+app.get('/auth',adminController.viewAuth)
 
 module.exports=app

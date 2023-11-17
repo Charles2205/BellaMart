@@ -1,72 +1,150 @@
-<div class="row">
-    <div class="col-xl-6">
+<link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+<%- include('../partials/sidebar') %> <%- include('../partials/header') %>
+<div class="main-content">
+  <div class="page-content">
+    <div class="row">
+      <div class="col-xl-6">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title mb-4">Form Grid Layout</h4>
+          <div class="card-body">
+            <h4 class="card-title mb-4">Add Administrator</h4>
 
-                <form>
-                    <div class="mb-3">
-                        <label for="formrow-firstname-input" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="formrow-firstname-input">
-                    </div>
+            <form>
+              <div class="mb-3">
+                <label for="formrow-firstname-input" class="form-label"
+                  >Full name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="formrow-firstname-input"
+                />
+              </div>
 
-                    <div class="row">
-                        
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="formrow-email-input" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="formrow-email-input">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="formrow-password-input" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="formrow-password-input">
-                            </div>
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="formrow-email-input" class="form-label"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="formrow-email-input"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="formrow-password-input" class="form-label"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="formrow-password-input"
+                    />
+                  </div>
+                </div>
+              </div>
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="mb-3">
-                                <label for="formrow-inputCity" class="form-label">City</label>
-                                <input type="text" class="form-control" id="formrow-inputCity">
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="mb-3">
-                                <label for="formrow-inputState" class="form-label">State</label>
-                                <select id="formrow-inputState" class="form-select">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4">
-                            <div class="mb-3">
-                                <label for="formrow-inputZip" class="form-label">Zip</label>
-                                <input type="text" class="form-control" id="formrow-inputZip">
-                            </div>
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="formrow-inputCity" class="form-label"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="formrow-inputCity"
+                      placeholder="+233 596508407"  
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="formrow-inputState" class="form-label"
+                      >Role</label
+                    >
+                    <select id="formrow-inputState" class="form-select">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                </div>
 
-                    <div class="mb-3">
-                        
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                              Check me out
-                            </label>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary w-md">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <!-- end card body -->
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="formrow-inputZip" class="form-label">Zip</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="formrow-inputZip"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn-primary w-md">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- end card body -->
         </div>
         <!-- end card -->
+      </div>
+      <!-- end col -->
+
+      <div class="col-xl-6">
+        
+        <div class="container-fluid">
+          <!-- start page title -->
+          
+          <!-- end page title -->
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Upload your picture</h4>
+                  <p class="card-title-desc">
+                    Upload a profile picture for identification within the system
+                  </p>
+
+                  <div>
+                    <form action="#" class="dropzone">
+                      <div class="fallback">
+                        <input name="file" type="file" multiple="multiple" aria-required="true"/>
+                      </div>
+                      <div class="dz-message needsclick">
+                        <div class="mb-3">
+                          <i
+                            class="display-4 text-muted bx bxs-cloud-upload"
+                          ></i>
+                        </div>
+
+                        <h4>Drop files here or click to upload.</h4>
+                      </div>
+                    </form>
+                  </div>
+
+                 
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end col -->
+      </div>
     </div>
+  </div>
+
+  <%- include('../partials/footer') %>
 </div>
+<script src="assets/libs/dropzone/min/dropzone.min.js"></script>
