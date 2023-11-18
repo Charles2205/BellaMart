@@ -14,7 +14,10 @@ const Admins =dbConnect.define('Admin',{
     type:DataTypes.STRING,
     allowNull: false,
    },
-   
+   phoneNumber:{
+    type:DataTypes.STRING,
+    allowNull: false,
+   }
 })
 Admins.sync({alter:true})
 module.exports = Admins
