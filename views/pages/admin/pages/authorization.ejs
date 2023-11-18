@@ -7,17 +7,18 @@
       <div class="col-xl-6">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title mb-4">Add Administrator</h4>
-
-            <form>
-              <div class="mb-3">
-                <label for="formrow-firstname-input" class="form-label"
+            <h4 class="card-title mb-2">Add Administrator 
+              <h6>All the fields are required</h6>
+            <form method="post" action="create-admin">
+              <div class="mb-3 my-3">
+                <label for="formrow-firstname-input" class="form-label "
                   >Full name</label
                 >
                 <input
                   type="text"
-                  class="form-control"
-                  id="formrow-firstname-input"
+                  class="form-control inputValidator fullName"
+                  id="formrow-firstname-input fullName"
+                  name="fullName"
                 />
               </div>
 
@@ -29,8 +30,10 @@
                     >
                     <input
                       type="email"
-                      class="form-control"
-                      id="formrow-email-input"
+                      class="form-control inputValidator email"
+                      id="formrow-email-input email "
+                      
+                      name="email"
                     />
                   </div>
                 </div>
@@ -41,8 +44,9 @@
                     >
                     <input
                       type="password"
-                      class="form-control"
-                      id="formrow-password-input"
+                      class="form-control inputValidator password"
+                      id="formrow-password-input  password"
+                      name="password"
                     />
                   </div>
                 </div>
@@ -56,9 +60,10 @@
                     >
                     <input
                       type="text"
-                      class="form-control"
-                      id="formrow-inputCity"
+                      class="form-control inputValidator phoneNumber"
+                      id="formrow-inputCity phoneNumber phoneNumber"
                       placeholder="+233 596508407"  
+                      name="phoneNumber"
                     />
                   </div>
                 </div>
@@ -67,9 +72,14 @@
                     <label for="formrow-inputState" class="form-label"
                       >Role</label
                     >
-                    <select id="formrow-inputState" class="form-select">
+                    <select id="formrow-inputState role" class="form-select inputValidator role" name="role">
                       <option selected>Choose...</option>
-                      <option>...</option>
+                      <option>Chief Operating Officer</option>
+                      <option>Human resource manager</option>
+                      <option>Marketing Administrator</option>
+                      <option>Financial Administrator</option>
+                      <option>Content Administrator</option>
+                      <option></option>
                     </select>
                   </div>
                 </div>
@@ -87,7 +97,7 @@
               </div>
 
               <div>
-                <button type="submit" class="btn btn-primary w-md">
+                <button type="submit" class="btn btn-primary w-md" id="btn-Save">
                   Submit
                 </button>
               </div>
@@ -98,7 +108,6 @@
         <!-- end card -->
       </div>
       <!-- end col -->
-
       <div class="col-xl-6">
         
         <%- include('../partials/uploadImage') %>
@@ -110,4 +119,9 @@
 
   <%- include('../partials/footer') %>
 </div>
+
 <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="assets/js/create_admin.js"></script>
+<%-contentFor ('title') %>
+Authenication

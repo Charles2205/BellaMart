@@ -6,4 +6,10 @@ app.get('/', adminController.viewLogin)
 app.get('/dashboard',adminController.index)
 app.get('/auth',adminController.viewAuth)
 
+
+
+
+
+app.post('/create-admin',adminController.createAdmin)
+
 module.exports=app
