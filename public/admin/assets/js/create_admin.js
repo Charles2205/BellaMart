@@ -29,8 +29,8 @@ btnSave.addEventListener('click',async(event)=>{
         const role = document.querySelector(".role").value
         // console.log(fullName,email,phoneNumber,password,role);
         const res = await axios.post("create-admin", {fullName,email,password,phoneNumber,role}) .then(response => {
+          showToast('success','Administrator added Successfully')
             //    Assuming a successful response from the server
-                showToast('success','Administrator added Successfully')
                 window.location.reload()
                 
              })
@@ -42,7 +42,28 @@ btnSave.addEventListener('click',async(event)=>{
 
 
 })
+// edit and save 
+const btnEdits = document.querySelectorAll(".btn-edit")
+btnEdits.forEach((btnEdit)=>{
+btnEdit.addEventListener('click',(e)=>{
+const tr= e.srcElement.parentNode.parentNode;
+const fullName = tr.children[0].textContent
+const email = tr.children[1].textContent
+const phoneNumber = tr.children[3].textContent
+// const role = tr.children[2].textContent
+console.log(fullName,email,phoneNumber);
+document.querySelector('#fullName').value = fullName
+document.querySelector('#email').value = email
+document.querySelector('#phoneNumber').value = phoneNumber
+// document.querySelector('#role').value = role
 
+})
+})
+const btnSaveChanges = document.querySelector('#btnSave')
+btnSaveChanges.addEventListener('click',async(e)=>{
+  e.preventDefault()
+  console.log('Working');
+})
 
 
 

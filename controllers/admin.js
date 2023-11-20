@@ -5,8 +5,10 @@ res.render('pages/admin/pages/index')
 const viewLogin =(req,res)=>{
     res.render('pages/admin/pages/login',{layout:'pages/admin/layouts/other'})
 }
-const viewAuth= (req,res)=>{
-    res.render('pages/admin/pages/authorization')
+const viewAuth= async(req,res)=>{
+    const admins = await dbAdmin.findAll()
+    const records =admins.map((v)=>{return v.dataValues})
+    res.render('pages/admin/pages/authorization',{records})
 }
 const createAdmin=async(req,res)=>{
     const {fullName,email,password,phoneNumber,role}= req.body
@@ -20,10 +22,8 @@ try {
     console.log('Error while creating administrator');
 }   
 }
-const updateList=async()=>{
-    const admins = await dbAdmin.findAll()
-    const records =admins.map((v)=>{return v.dataValues})
-}
+
+
 module.exports={
     index,
     viewLogin,

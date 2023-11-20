@@ -22,15 +22,27 @@
                                         </th>  
                                         <th scope="col" class="text-center">Role</th>
                                         <th scope="col" class="text-center">Phone Number</th>
+                                        <th scope="col" class="text-center">Action</th>
 
                                       </tr>
                                 </thead>
-                                <tr>
-                                    <th class="text-nowrap" scope="row">Charles Ewudzi</th>
-                                    <td>cewudzie0@gmail.com</td>
-                                    <td>Super Administrator</td>
-                                    <td>+233596508407</td>
-                                </tr>
+                                <% records.forEach((record,count)=>{ %>
+                
+                                    <tbody>
+                                        <tr>
+                                            <th class="text-nowrap" scope="row"><%= record.fullName %></th>
+                                            <td><%= record.email %></td>
+                                            <td><%= record.role %></td>
+                                            <td><%= record.phoneNumber %></td>
+                                            <td class="text-center">
+                                                <button class="btn btn-primary btn-edit" id="btn-edit" type="button" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                                                <button class="btn btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                      </tbody>
+                                
+                                
+                                <% }) %>
                                 <tbody>
                                 
                                 </tbody>
@@ -44,3 +56,61 @@
 
     </div> <!-- container-fluid -->
 </div
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Administrator</h5>
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="create-admin">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Full Name</label>
+                          <input type="text" class="form-control mt-2 inputValidator" id="fullName"   name="fullName" >
+                        </div>
+                        <div class="form-group mt-3">
+                          <label for="exampleInputPassword1">Email</label>
+                          <input type="text" class="form-control mt-2 inputValidator " id="email"  name="email" >
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="exampleInputPassword1">Phone Number</label>
+                            <input type="text" class="form-control mt-2 inputValidator" id="phoneNumber"  name="phoneNumber">
+                          </div>
+                          <div class="form-group mt-3">
+                            <label for="exampleInputPassword1">Role</label>
+                            <select id="formrow-inputState" class="form-select inputValidator role" name="role">
+                                <option selected>Choose...</option>
+                                <option>Chief Operating Officer</option>
+                                <option>Human resource manager</option>
+                                <option>Marketing Administrator</option>
+                                <option>Financial Administrator</option>
+                                <option>Content Administrator</option>
+                                <option></option>
+                              </select>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button id="btnSave" type="submit" class="btn btn-primary">Save</button>
+                          </div>
+                      </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- end card body -->
+    </div>
+    <!-- end card -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
