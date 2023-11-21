@@ -9,7 +9,10 @@ app.get('/auth',adminController.viewAuth)
 
 
 
+app.patch('/admin')
 
-app.post('/create-admin',adminController.createAdmin)
+
+
+app.post('/admin',adminController.createAdmin)
 
 module.exports=app

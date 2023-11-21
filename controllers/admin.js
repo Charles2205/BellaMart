@@ -13,17 +13,22 @@ const viewAuth= async(req,res)=>{
 const createAdmin=async(req,res)=>{
     const {fullName,email,password,phoneNumber,role}= req.body
 try {
-   await dbAdmin.create({fullName,email,password,phoneNumber,role})
-   console.log('Admin created Successfully yes');
-    res.redirect("/admin/auth")
+   const data= await dbAdmin.create({fullName,email,password,phoneNumber,role})
+   console.log('Admin created Successfully');
+    // res.redirect("/admin/auth")
+    res.json(data)
     
 } catch (error) {
     console.log(error);
     console.log('Error while creating administrator');
 }   
 }
+const updateRecord =async(req,res)=>{
 
+}  
+    
 
+updateRecord()
 module.exports={
     index,
     viewLogin,
