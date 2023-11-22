@@ -9,7 +9,9 @@ app.get('/auth',adminController.viewAuth)
 
 
 
-app.patch('/admin')
+app.patch('/:id',adminController.updateRecord)
+
+// app.delete('/admin:id',adminController.deleteRecord)
 
 
 

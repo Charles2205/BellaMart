@@ -27,5 +27,5 @@ const Admins = dbConnect.define("Admin", {
     allowNull: false,
   },
 });
-Admins.sync({ force: true });
+Admins.sync({ alter: true });
 module.exports = Admins;
