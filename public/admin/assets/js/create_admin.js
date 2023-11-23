@@ -9,35 +9,33 @@
 
 const btnSave = document.querySelector('#btn-Save')
 btnSave.addEventListener('click',async(event)=>{
-    // event.preventDefault()
+    event.preventDefault()
     let allInputs = document.querySelectorAll(".inputValidator")
     allInputs = Array.from(allInputs)
 
     const result = allInputs.filter((input) => {
         return input.value.length < 1;
     })
-   
-    if (result.length > 0) {
-        showToast("error", "Missing fields");
-    } else {
-       
-        
+    
+    if (result.length < 0) {
+      showToast('error',"Missing fields")
+    } else { 
         const fullName = document.querySelector(".fullName").value
-        const email = document.querySelector(".email").value
-        const password = document.querySelector(".password").value
-        const phoneNumber = document.querySelector(".phoneNumber").value
-        const role = document.querySelector(".role").value
-        // console.log(fullName,email,phoneNumber,password,role);
-        const res = await axios.post("create-admin", {fullName,email,password,phoneNumber,role}) .then(response => {
-          showToast('success','Administrator added Successfully')
-            //    Assuming a successful response from the server
-                window.location.reload()
-                
-             })
-             .catch(error => {
-               console.error('Error:', error);
-               showToast('error', 'Failed to add Administrator');
-             });
+      const email = document.querySelector(".email").value
+      const password = document.querySelector(".password").value
+      const phoneNumber = document.querySelector(".phoneNumber").value
+      const role = document.querySelector(".role").value
+      // console.log(fullName,email,phoneNumber,password,role);
+      const res = await axios.post("admin", {fullName,email,password,phoneNumber,role}) .then(response => {
+            showToast('success','Administrator added Successfully')
+          //    Assuming a successful response from the server
+              window.location.reload()
+              
+           })
+           .catch(error => {
+             console.error('Error:', error);
+             showToast('error', 'Failed to add Administrator');
+           });
     }
 
 
@@ -59,11 +57,11 @@ document.querySelector('#phoneNumber').value = phoneNumber
 
 })
 })
-// const btnSaveChanges = document.querySelector('#btnSave')
-// btnSaveChanges.addEventListener('click',async(e)=>{
-//   e.preventDefault()
-//   console.log('Working');
-// })
+const btnSaveChanges = document.querySelector('#btnSave')
+btnSaveChanges.addEventListener('click',async(e)=>{
+  e.preventDefault()
+axios.patch()
+})
 
 
 
