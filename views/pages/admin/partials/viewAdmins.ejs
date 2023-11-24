@@ -30,10 +30,11 @@
                 
                                     <tbody>
                                         <tr>
-                                            <th class="text-nowrap" scope="row"><%= record.fullName %></th>
-                                            <td><%= record.email %></td>
-                                            <td><%= record.role %></td>
-                                            <td><%= record.phoneNumber %></td>
+                                          <input id="holdId" type="hidden" name="id" value="<%= record.id %>">
+                                            <th class="text-nowrap text-center" scope="row"><%= record.fullName %></th>
+                                            <td class="text-center"><%= record.email %></td>
+                                            <td class="text-center"><%= record.role %></td>
+                                            <td class="text-center"><%= record.phoneNumber %></td>
                                             <td class="text-center">
                                                 <button class="btn btn-primary btn-edit" id="btn-edit" type="button" data-toggle="modal" data-target="#exampleModal">Edit</button>
                                                 <button class="btn btn-danger">Delete</button>
@@ -69,7 +70,8 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="/admin/:id">
+                    <form method="post" action="auth">
+                        <input class="holdId" type="hidden" name="id">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Full Name</label>
                           <input type="text" class="form-control mt-2 inputValidator" id="fullName"   name="fullName" >

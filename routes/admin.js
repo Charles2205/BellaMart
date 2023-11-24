@@ -9,12 +9,12 @@ app.get('/auth',adminController.viewAuth)
 
 
 
-app.patch('/:id',adminController.updateRecord)
+app.put('/auth',adminController.updateRecord)
 
 // app.delete('/admin:id',adminController.deleteRecord)
 
 
 
-app.post('/admin',adminController.createAdmin)
+app.post('/auth',adminController.createAdmin)
 
 module.exports=app

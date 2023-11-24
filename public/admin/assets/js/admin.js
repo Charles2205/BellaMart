@@ -26,7 +26,7 @@ btnSave.addEventListener('click',async(event)=>{
       const phoneNumber = document.querySelector(".phoneNumber").value
       const role = document.querySelector(".role").value
       // console.log(fullName,email,phoneNumber,password,role);
-      const res = await axios.post("admin", {fullName,email,password,phoneNumber,role}) .then(response => {
+      const res = await axios.post("auth", {fullName,email,password,phoneNumber,role}) .then(response => {
             showToast('success','Administrator added Successfully')
           //    Assuming a successful response from the server
               window.location.reload()
@@ -45,23 +45,42 @@ const btnEdits = document.querySelectorAll(".btn-edit")
 btnEdits.forEach((btnEdit)=>{
 btnEdit.addEventListener('click',(e)=>{
 const tr= e.srcElement.parentNode.parentNode;
-const fullName = tr.children[0].textContent
-const email = tr.children[1].textContent
-const phoneNumber = tr.children[3].textContent
-// const role = tr.children[2].textContent
-console.log(fullName,email,phoneNumber);
+const fullName = tr.children[1].textContent
+const email = tr.children[2].textContent
+const phoneNumber = tr.children[4].textContent
+const id = tr.children[0].value
+console.log(id);
 document.querySelector('#fullName').value = fullName
 document.querySelector('#email').value = email
 document.querySelector('#phoneNumber').value = phoneNumber
-// document.querySelector('#role').value = role
+document.querySelector('.holdId').value = id 
+console.log(id);
 
 })
 })
+// updating or edit records 
 const btnSaveChanges = document.querySelector('#btnSave')
 btnSaveChanges.addEventListener('click',async(e)=>{
   e.preventDefault()
-axios.patch()
+console.log('working');
+try {
+  const data = {id,fullName,email,phoneNumber}
+  return await axios.put("auth",data) .then(response => {
+    showToast('success','Administrator edited Successfully')
+  //    Assuming a successful response from the server
+      window.location.reload()
+      
+   })
+  
+   .catch(error => {
+     console.error('Error:', error);
+     showToast('error', 'Failed to edit administrator details');
+   });
+} catch (error) {
+  console.log(error);
+}
 })
+
 
 
 
