@@ -1,12 +1,3 @@
-// Swal.fire({
-//     title: "Good job!",
-//     text: "You clicked the button!",
-//     icon: "success",
-//     showCancelButton: !0,
-//     confirmButtonColor: "#556ee6",
-//     cancelButtonColor: "#f46a6a",
-//   });
-
 const btnSave = document.querySelector('#btn-Save')
 btnSave.addEventListener('click',async(event)=>{
     event.preventDefault()
@@ -55,17 +46,14 @@ document.querySelector('#email').value = email
 document.querySelector('#phoneNumber').value = phoneNumber
 document.querySelector('.holdId').value = id 
 console.log(id);
-
-})
-})
 // updating or edit records 
 const btnSaveChanges = document.querySelector('#btnSave')
 btnSaveChanges.addEventListener('click',async(e)=>{
-  e.preventDefault()
-console.log('working');
+  e.preventDefault() 
+console.log(id);
 try {
-  const data = {id,fullName,email,phoneNumber}
-  return await axios.put("auth",data) .then(response => {
+  return await axios.put("auth",{id,fullName,email,phoneNumber}) .then(response => {
+    console.log(id);
     showToast('success','Administrator edited Successfully')
   //    Assuming a successful response from the server
       window.location.reload()
@@ -80,6 +68,9 @@ try {
   console.log(error);
 }
 })
+})
+})
+
 
 
 

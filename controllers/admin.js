@@ -1,5 +1,5 @@
 const dbAdmin = require("../database/models/admin");
-const sequel = require("../database/dbConnect");
+const sequelConfig = require("../database/dbConnect")
 const index = (req, res) => {
   res.render("pages/admin/pages/index");
 };
@@ -36,6 +36,7 @@ const createAdmin = async (req, res) => {
 const updateRecord = async (req, res) => {
   try {
     const { id } = req.query;
+
     const { fullName, email, phoneNumber, role} = req.body;
     const updatedAdmin = await dbAdmin.update(
       { fullName, email, phoneNumber, role},
@@ -45,14 +46,14 @@ const updateRecord = async (req, res) => {
     );
 
     if (updatedAdmin>0 ) {
-      return res.status(201).json({ message: "Admin updated successfully" });
+      return res.status(200).json({ message: "Admin updated successfully" });
     }else{
-        return res.status(201).json({ message: "Admin not found" });
+        return res.status(404).json({ message: "Admin not found" });
     }
     
   } catch (error) {
     console.log(error);
-    return res.status(501).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 };
 
