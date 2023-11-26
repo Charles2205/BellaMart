@@ -10,8 +10,8 @@ const viewLogin = (req, res) => {
 };
 const viewAuth = async (req, res) => {
   const admins = await dbAdmin.findAll();
-  const records = admins.map((v) => {
-    return v.dataValues;
+  const records = admins.map((va) => {
+    return va.dataValues;
   });
   res.render("pages/admin/pages/authorization", { records });
 };
