@@ -1,6 +1,6 @@
 const btnSave = document.querySelector('#btn-Save')
 btnSave.addEventListener('click',async(event)=>{
-    event.preventDefault()
+    // event.preventDefault()
     let allInputs = document.querySelectorAll(".inputValidator")
     allInputs = Array.from(allInputs)
 
